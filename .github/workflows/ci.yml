@@ -1,0 +1,34 @@
+name: Build and Test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      # 1. تجهيز بيئة .NET للـ Backend
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x 
+
+      - name: Build Backend
+        run: dotnet build ./MVP/MVP.sln --configuration Release
+
+      # 2. تجهيز بيئة Node.js للـ Frontend
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Build Frontend
+        working-directory: ./MVP-app
+        run: |
+          npm install
+          npm run build
