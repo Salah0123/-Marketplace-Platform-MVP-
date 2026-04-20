@@ -30,5 +30,7 @@ jobs:
       - name: Build Frontend
         working-directory: ./MVP-app
         run: |
+          rm -rf .angular
+          rm -rf dist
           npm install
           npm run build
