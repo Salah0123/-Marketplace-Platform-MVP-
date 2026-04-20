@@ -206,10 +206,10 @@ http://localhost:8080
 
 ## 📄 API Documentation
 
-* Swagger available at:
+* apidog available at:
 
 ```
-https://localhost:7141/swagger
+https://edep6z06vy.apidog.io
 ```
 
 ---
