@@ -9,28 +9,37 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v6
 
-      # 1. تجهيز بيئة .NET للـ Backend
+      # .NET
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: 10.0.x 
+          dotnet-version: 10.0.x
+
+      - name: Restore Backend
+        run: dotnet restore ./MVP/MVP.slnx
 
       - name: Build Backend
-        run: dotnet build ./MVP/MVP.slnx --configuration Release
+        run: dotnet build ./MVP/MVP.slnx --no-restore --configuration Release
 
-      # 2. تجهيز بيئة Node.js للـ Frontend
+      - name: Test Backend
+        run: dotnet test ./MVP/MVP.slnx --no-build --verbosity normal
+
+      # Node
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
+          cache: 'npm'
+          cache-dependency-path: MVP-app/package-lock.json
+
+      - name: Install Frontend
+        working-directory: ./MVP-app
+        run: npm ci
 
       - name: Build Frontend
         working-directory: ./MVP-app
-        run: |
-          rm -rf .angular
-          rm -rf dist
-          npm install
-          npm run build
+        run: npm run build
