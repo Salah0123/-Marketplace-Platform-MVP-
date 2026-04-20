@@ -24,7 +24,7 @@ public class ServiceRequestService(ApplicationDbContext context) : IServiceReque
 
         if (user.IsFreeSubscribtion == (int)SubscriptionType.Free)
         {
-            using var transaction = await _context.Database.BeginTransactionAsync(cancellationToken);
+            //using var transaction = await _context.Database.BeginTransactionAsync(cancellationToken);
 
             var requestCount = await _context.ServiceRequests
                 .CountAsync(r => r.CustomerId == user.Id, cancellationToken);
@@ -39,7 +39,7 @@ public class ServiceRequestService(ApplicationDbContext context) : IServiceReque
             await _context.ServiceRequests.AddAsync(serviceRequest, cancellationToken);
             await _context.SaveChangesAsync(cancellationToken);
 
-            await transaction.CommitAsync(cancellationToken);
+            //await transaction.CommitAsync(cancellationToken);
 
             return Result<int>.Success(serviceRequest.Id);
         }

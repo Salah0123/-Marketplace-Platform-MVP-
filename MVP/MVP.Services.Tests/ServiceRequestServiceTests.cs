@@ -1,57 +1,59 @@
 ﻿using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
-using Moq;
 using MVP.Domain.Entities;
 using MVP.Domain.Enums;
 using MVP.Infrastructure.Data;
 using MVP.Services.Services;
-using System.Linq.Expressions;
 using Xunit;
 
 namespace MVP.Services.Tests;
 
 public class ServiceRequestServiceTests
 {
-    private readonly Mock<ApplicationDbContext> _contextMock;
-    private readonly ServiceRequestService _service;
-
-    public ServiceRequestServiceTests()
+    private ApplicationDbContext CreateDbContext()
     {
-        _contextMock = new Mock<ApplicationDbContext>();   // Loose mode (الأسهل للمبتدئين)
-        _service = new ServiceRequestService(_contextMock.Object);
+        var options = new DbContextOptionsBuilder<ApplicationDbContext>()
+            .UseInMemoryDatabase(Guid.NewGuid().ToString()) 
+            .Options;
+
+        return new ApplicationDbContext(options);
     }
 
     // ==================== CreateAsync Tests ====================
 
     [Fact]
-    public async Task CreateAsync_Should_Add_And_Save_And_Return_Success()
+    public async Task CreateAsync_Should_Fail_When_Limit_Reached()
     {
-        // Arrange
-        var serviceRequest = new ServiceRequest
+        var context = CreateDbContext();
+
+        var customerId = "customer-123";
+
+        context.Users.Add(new ApplicationUser
         {
-            Title = "Fix my sink",
-            Description = "The kitchen sink is leaking",
-            Latitude = 30.0444,
-            Longitude = 31.2357,
-            CustomerId = "customer-123",
-            Status = RequestStatus.Pending
+            Id = customerId,
+            IsFreeSubscribtion = (int)SubscriptionType.Free
+        });
+
+        context.ServiceRequests.AddRange(
+            new ServiceRequest { CustomerId = customerId },
+            new ServiceRequest { CustomerId = customerId },
+            new ServiceRequest { CustomerId = customerId }
+        );
+
+        await context.SaveChangesAsync();
+
+        var service = new ServiceRequestService(context);
+
+        var request = new ServiceRequest
+        {
+            CustomerId = customerId,
+            Title = "New Request"
         };
 
-        var mockDbSet = new Mock<DbSet<ServiceRequest>>();
+        var result = await service.CreateAsync(request, CancellationToken.None);
 
-        _contextMock.Setup(c => c.ServiceRequests).Returns(mockDbSet.Object);
-        _contextMock.Setup(c => c.SaveChangesAsync(It.IsAny<CancellationToken>()))
-                    .ReturnsAsync(1);
-
-        // Act
-        var result = await _service.CreateAsync(serviceRequest, CancellationToken.None);
-
-        // Assert
-        result.IsSuccess.Should().BeTrue();
-        result.Value.Should().BeGreaterThan(0);
-
-        mockDbSet.Verify(m => m.AddAsync(It.IsAny<ServiceRequest>(), It.IsAny<CancellationToken>()), Times.Once);
-        _contextMock.Verify(c => c.SaveChangesAsync(It.IsAny<CancellationToken>()), Times.Once);
+        result.IsSuccess.Should().BeFalse();
+        result.Error!.Code.Should().Be("SubscriptionLimit");
     }
 
     // ==================== AcceptAsync Tests ====================
@@ -59,13 +61,23 @@ public class ServiceRequestServiceTests
     [Fact]
     public async Task AcceptAsync_Should_Return_Failure_When_Provider_Not_Found()
     {
-        _contextMock.Setup(c => c.Users.FirstOrDefaultAsync(
-            It.IsAny<Expression<Func<ApplicationUser, bool>>>(),
-            It.IsAny<CancellationToken>()))
-            .ReturnsAsync((ApplicationUser?)null);
+        // Arrange
+        var context = CreateDbContext();
+        var service = new ServiceRequestService(context);
 
-        var result = await _service.AcceptAsync(100, "provider-not-exist");
+        var request = new ServiceRequest
+        {
+            Id = 100,
+            Status = RequestStatus.Pending
+        };
 
+        context.ServiceRequests.Add(request);
+        await context.SaveChangesAsync();
+
+        // Act
+        var result = await service.AcceptAsync(100, "provider-not-exist");
+
+        // Assert
         result.IsSuccess.Should().BeFalse();
         result.Error?.Description.Should().Contain("Provider not found");
     }
@@ -73,24 +85,29 @@ public class ServiceRequestServiceTests
     [Fact]
     public async Task AcceptAsync_Should_Update_Status_When_Valid()
     {
-        var provider = new ApplicationUser { Id = "provider-456" };
-        var request = new ServiceRequest { Id = 50, Status = RequestStatus.Pending };
+        // Arrange
+        var context = CreateDbContext();
+        var service = new ServiceRequestService(context);
 
-        _contextMock.Setup(c => c.Users.FirstOrDefaultAsync(
-            It.IsAny<Expression<Func<ApplicationUser, bool>>>(),
-            It.IsAny<CancellationToken>()))
-            .ReturnsAsync(provider);
+        var provider = new ApplicationUser
+        {
+            Id = "provider-456"
+        };
 
-        _contextMock.Setup(c => c.ServiceRequests.FirstOrDefaultAsync(
-            It.IsAny<Expression<Func<ServiceRequest, bool>>>(),
-            It.IsAny<CancellationToken>()))
-            .ReturnsAsync(request);
+        var request = new ServiceRequest
+        {
+            Id = 50,
+            Status = RequestStatus.Pending
+        };
 
-        _contextMock.Setup(c => c.SaveChangesAsync(It.IsAny<CancellationToken>()))
-                    .ReturnsAsync(1);
+        context.Users.Add(provider);
+        context.ServiceRequests.Add(request);
+        await context.SaveChangesAsync();
 
-        var result = await _service.AcceptAsync(50, "provider-456");
+        // Act
+        var result = await service.AcceptAsync(50, "provider-456");
 
+        // Assert
         result.IsSuccess.Should().BeTrue();
         request.Status.Should().Be(RequestStatus.Accepted);
         request.ProviderId.Should().Be("provider-456");
@@ -101,16 +118,29 @@ public class ServiceRequestServiceTests
     [Fact]
     public async Task CompleteAsync_Should_Return_Failure_When_Not_Accepted()
     {
-        var request = new ServiceRequest { Id = 60, Status = RequestStatus.Pending };
+        // Arrange
+        var context = CreateDbContext();
+        var service = new ServiceRequestService(context);
 
-        _contextMock.Setup(c => c.Users.FirstOrDefaultAsync(It.IsAny<Expression<Func<ApplicationUser, bool>>>(), It.IsAny<CancellationToken>()))
-                    .ReturnsAsync(new ApplicationUser());
+        var provider = new ApplicationUser
+        {
+            Id = "p1"
+        };
 
-        _contextMock.Setup(c => c.ServiceRequests.FirstOrDefaultAsync(It.IsAny<Expression<Func<ServiceRequest, bool>>>(), It.IsAny<CancellationToken>()))
-                    .ReturnsAsync(request);
+        var request = new ServiceRequest
+        {
+            Id = 60,
+            Status = RequestStatus.Pending
+        };
 
-        var result = await _service.CompleteAsync(60, "p1");
+        context.Users.Add(provider);
+        context.ServiceRequests.Add(request);
+        await context.SaveChangesAsync();
 
+        // Act
+        var result = await service.CompleteAsync(60, "p1");
+
+        // Assert
         result.IsSuccess.Should().BeFalse();
     }
 }
