@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MVP.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d43ce9dfac07f393c08d1bd8f2a9a3e95997a0ac")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a9a2b4346c9a7de10485a49bcf774896fa117e77")]
 [assembly: System.Reflection.AssemblyProductAttribute("MVP.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MVP.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

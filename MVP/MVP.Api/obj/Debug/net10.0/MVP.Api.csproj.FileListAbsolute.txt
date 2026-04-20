@@ -394,3 +394,4 @@ C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Api\obj\Debug
 C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Api\obj\Debug\net10.0\MVP.Api.pdb
 C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Api\obj\Debug\net10.0\MVP.Api.genruntimeconfig.cache
 C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Api\obj\Debug\net10.0\ref\MVP.Api.dll
+C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Api\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt

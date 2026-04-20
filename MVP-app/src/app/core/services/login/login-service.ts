@@ -1,4 +1,4 @@
-import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { Observable, tap } from 'rxjs';
@@ -20,17 +20,10 @@ export class LoginService {
   private readonly platformId = inject(PLATFORM_ID);
 
 
-  private getApiBaseUrl(): string {
-  // إذا كنا داخل الحاوية (Server)، نستخدم اسم الخدمة
-  if (isPlatformServer(this.platformId)) {
-    return 'http://mvp-api:8080';
-  }
-  // إذا كنا في المتصفح (Browser)، نستخدم الرابط العام (أو relative path)
-  return 'http://localhost:8080'; 
-}
+  
 
   login(body: LoginRequest): Observable<unknown> {
-    const url = `${this.getApiBaseUrl()}/api/auth/login`;
+    const url = `${environment.apiBaseUrl}/api/auth/login`;
     return this.http.post<unknown>(url, body).pipe(
       tap((response) => {
         const token = this.extractTokenFromLoginResponse(response);
