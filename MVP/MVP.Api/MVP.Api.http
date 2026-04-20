@@ -1,0 +1,122 @@
+@host = http://localhost:5017
+@token = {{login.response.body.$.token}}
+
+### =============================================
+### AUTHENTICATION
+### =============================================
+
+# Login
+POST {{host}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "hossameldinsalah67@gmail.com",
+  "password": "@1Password"
+}
+
+###
+
+# Register new user
+POST {{host}}/api/auth/register
+Content-Type: application/json
+
+{
+  "email": "newuser@example.com",
+  "password": "P@ssw0rd",
+  "firstName": "New",
+  "lastName": "User"
+}
+
+###
+
+### =============================================
+### USERS & ROLES
+### =============================================
+
+# Get current user profile
+GET {{host}}/api/auth
+Authorization: Bearer {{token}}
+
+###
+
+# Get all roles
+GET {{host}}/api/auth/roles
+Authorization: Bearer {{token}}
+
+###
+
+# Create new role
+POST {{host}}/api/auth/roles
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "name": "Admin"
+}
+
+###
+
+# Assign roles to user (example: userId = 12345)
+POST {{host}}/api/auth/12345/roles
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+[
+  "Admin",
+  "User"
+]
+
+###
+
+# Remove roles from user
+DELETE {{host}}/api/auth/12345/roles
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+[
+  "User"
+]
+
+###
+
+### =============================================
+### SERVICE REQUESTS
+### =============================================
+
+# Get all service requests
+GET {{host}}/api/servicerequests
+Authorization: Bearer {{token}}
+
+###
+
+# Create new service request
+POST {{host}}/api/servicerequests
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "title": "Fix my sink",
+  "description": "The kitchen sink is leaking badly",
+  "latitude": 30.0444,
+  "longitude": 31.2357
+}
+
+###
+
+# Get nearby service requests (for providers)
+GET {{host}}/api/servicerequests/nearby?providerLat=30.0444&providerLng=31.2357
+Authorization: Bearer {{token}}
+
+###
+
+# Accept a service request (example: id = 1)
+POST {{host}}/api/servicerequests/1/accept
+Authorization: Bearer {{token}}
+
+###
+
+# Complete a service request (example: id = 1)
+POST {{host}}/api/servicerequests/1/complete
+Authorization: Bearer {{token}}
+
+###

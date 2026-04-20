@@ -1,0 +1,36 @@
+ :host {
+   display: block;
+ }
+ 
+ .sidebar-shell {
+   display: contents;
+ }
+ 
+ .sidebar {
+   width: 280px;
+   height: 100vh;
+   position: sticky;
+   top: 0;
+ }
+ 
+ .sidebar-link {
+   border-radius: 0.5rem;
+   padding: 0.65rem 0.75rem;
+   color: var(--bs-body-color);
+ }
+ 
+ .sidebar-link:hover {
+   background: rgba(13, 110, 253, 0.08);
+ }
+ 
+ .sidebar-link.active {
+   background: rgba(13, 110, 253, 0.12);
+   font-weight: 600;
+ }
+ 
+ .nav-section {
+   font-size: 0.75rem;
+   font-weight: 600;
+   text-transform: uppercase;
+   letter-spacing: 0.06em;
+ }

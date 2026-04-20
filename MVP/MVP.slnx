@@ -1,0 +1,14 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".env" />
+  </Folder>
+  <Project Path="docker-compose.dcproj">
+    <Build />
+  </Project>
+  <Project Path="MVP.Api/MVP.Api.csproj" />
+  <Project Path="MVP.Application/MVP.Application.csproj" />
+  <Project Path="MVP.Domain/MVP.Domain.csproj" />
+  <Project Path="MVP.Infrastructure/MVP.Infrastructure.csproj" />
+  <Project Path="MVP.Services.Tests/MVP.Services.Tests.csproj" Id="e97b7ac2-33bf-4224-87da-85f7ab8f41a7" />
+  <Project Path="MVP.Services/MVP.Services.csproj" Id="8c0e2747-2c41-45a9-b903-f128d2744cda" />
+</Solution>

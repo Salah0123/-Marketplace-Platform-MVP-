@@ -1,0 +1,21 @@
+:host {
+  display: block;
+}
+
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.app-content {
+  flex: 1;
+  min-width: 0;
+}
+
+/* On mobile, sidebar is offcanvas; content should remain full width */
+@media (max-width: 991.98px) {
+  .app-layout {
+    display: block;
+  }
+}
+

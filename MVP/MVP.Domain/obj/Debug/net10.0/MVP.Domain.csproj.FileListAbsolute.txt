@@ -1,0 +1,25 @@
+C:\Users\LOQ\source\repos\MVP\MVP.Domain\bin\Debug\net10.0\MVP.Domain.deps.json
+C:\Users\LOQ\source\repos\MVP\MVP.Domain\bin\Debug\net10.0\MVP.Domain.dll
+C:\Users\LOQ\source\repos\MVP\MVP.Domain\bin\Debug\net10.0\MVP.Domain.pdb
+C:\Users\LOQ\source\repos\MVP\MVP.Domain\obj\Debug\net10.0\MVP.Domain.csproj.AssemblyReference.cache
+C:\Users\LOQ\source\repos\MVP\MVP.Domain\obj\Debug\net10.0\MVP.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LOQ\source\repos\MVP\MVP.Domain\obj\Debug\net10.0\MVP.Domain.AssemblyInfoInputs.cache
+C:\Users\LOQ\source\repos\MVP\MVP.Domain\obj\Debug\net10.0\MVP.Domain.AssemblyInfo.cs
+C:\Users\LOQ\source\repos\MVP\MVP.Domain\obj\Debug\net10.0\MVP.Domain.csproj.CoreCompileInputs.cache
+C:\Users\LOQ\source\repos\MVP\MVP.Domain\obj\Debug\net10.0\MVP.Domain.dll
+C:\Users\LOQ\source\repos\MVP\MVP.Domain\obj\Debug\net10.0\refint\MVP.Domain.dll
+C:\Users\LOQ\source\repos\MVP\MVP.Domain\obj\Debug\net10.0\MVP.Domain.pdb
+C:\Users\LOQ\source\repos\MVP\MVP.Domain\obj\Debug\net10.0\ref\MVP.Domain.dll
+C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Domain\bin\Debug\net10.0\MVP.Domain.deps.json
+C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Domain\bin\Debug\net10.0\MVP.Domain.dll
+C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Domain\bin\Debug\net10.0\MVP.Domain.pdb
+C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Domain\obj\Debug\net10.0\MVP.Domain.csproj.AssemblyReference.cache
+C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Domain\obj\Debug\net10.0\MVP.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Domain\obj\Debug\net10.0\MVP.Domain.AssemblyInfoInputs.cache
+C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Domain\obj\Debug\net10.0\MVP.Domain.AssemblyInfo.cs
+C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Domain\obj\Debug\net10.0\MVP.Domain.csproj.CoreCompileInputs.cache
+C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Domain\obj\Debug\net10.0\MVP.Domain.sourcelink.json
+C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Domain\obj\Debug\net10.0\MVP.Domain.dll
+C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Domain\obj\Debug\net10.0\refint\MVP.Domain.dll
+C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Domain\obj\Debug\net10.0\MVP.Domain.pdb
+C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Domain\obj\Debug\net10.0\ref\MVP.Domain.dll

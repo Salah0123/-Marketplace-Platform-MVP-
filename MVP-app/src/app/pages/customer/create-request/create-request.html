@@ -1,0 +1,141 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+
+      <div class="card shadow-sm">
+
+        <div class="card-header bg-primary text-white">
+          Create Service Request
+        </div>
+
+        <div class="card-body">
+
+          <!-- Title -->
+          <div class="mb-3">
+            <label class="form-label">Title</label>
+
+            <input type="text" class="form-control" placeholder="Enter title" [class.is-invalid]="errors().title"
+              [value]="createRequestModel().title" (input)="updateModel('title', $any($event.target).value)" />
+
+            @if (errors().title) {
+            <div class="text-danger small mt-1">
+              {{ errors().title }}
+            </div>
+            }
+          </div>
+
+          <!-- Description -->
+          <div class="mb-3">
+            <label class="form-label">Description</label>
+
+            <textarea class="form-control" rows="3" placeholder="Enter description"
+              [class.is-invalid]="errors().description" [value]="createRequestModel().description"
+              (input)="updateModel('description', $any($event.target).value)"></textarea>
+
+            @if (errors().description) {
+            <div class="text-danger small mt-1">
+              {{ errors().description }}
+            </div>
+            }
+          </div>
+          <div class="mb-3">
+            <button class="btn btn-outline-secondary w-100" (click)="enhanceWithAI()" [disabled]="aiLoading()">
+              @if (!aiLoading()) {
+              ✨ Improve with AI
+              } @else {
+              <span class="spinner-border spinner-border-sm"></span>
+              Analyzing...
+              }
+            </button>
+          </div>
+
+          <!-- Location -->
+          <div class="alert alert-info py-2">
+            📍 Location is detected automatically
+          </div>
+
+          <div class="row mb-3">
+            <div class="col">
+              <label class="form-label">Latitude</label>
+
+              <input type="text" class="form-control" [class.is-invalid]="errors().latitude"
+                [value]="createRequestModel().latitude" readonly />
+
+              @if (errors().latitude) {
+              <div class="text-danger small mt-1">
+                {{ errors().latitude }}
+              </div>
+              }
+            </div>
+
+            <div class="col">
+              <label class="form-label">Longitude</label>
+
+              <input type="text" class="form-control" [class.is-invalid]="errors().longitude"
+                [value]="createRequestModel().longitude" readonly />
+
+              @if (errors().longitude) {
+              <div class="text-danger small mt-1">
+                {{ errors().longitude }}
+              </div>
+              }
+            </div>
+          </div>
+
+          <!-- Submit -->
+          <button class="btn btn-primary w-100" (click)="submit()" [disabled]="loading()">
+            @if (!loading()) {
+            Submit Request
+            } @else {
+            <span class="spinner-border spinner-border-sm me-2"></span>
+            Processing...
+            }
+          </button>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="container mt-5">
+  @if (apiErrorMessage()) {
+  <div class="alert alert-danger mb-3">
+    {{ apiErrorMessage() }}
+  </div>
+  }
+</div>
+
+@if (aiResult()) {
+<div class="card border mt-3 p-3 bg-light">
+
+  <h6 class="fw-bold mb-2">AI Suggestions</h6>
+
+  <div class="mb-2">
+    <strong>Category:</strong>
+    <span class="badge bg-info text-dark ms-1">
+      {{ aiResult()?.category }}
+    </span>
+  </div>
+
+  <div class="mb-2">
+    <strong>Suggested Price:</strong>
+    <span class="text-success">
+      {{ aiResult()?.suggestedPrice }} SAR
+    </span>
+  </div>
+
+  <div class="mb-3">
+    <strong>Improved Description:</strong>
+    <p class="small text-muted mb-0">
+      {{ aiResult()?.refinedDescription }}
+    </p>
+  </div>
+
+  <button class="btn btn-success w-100" (click)="applyAI()">
+    Apply Description
+  </button>
+
+</div>
+}

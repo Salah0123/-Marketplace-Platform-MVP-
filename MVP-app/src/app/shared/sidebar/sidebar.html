@@ -1,0 +1,166 @@
+<!-- Desktop: fixed sidebar | Mobile: offcanvas -->
+<div class="sidebar-shell">
+  <!-- Mobile top bar -->
+  <div class="d-lg-none sticky-top bg-body border-bottom">
+    <div class="container-fluid py-2 d-flex align-items-center justify-content-between">
+      <button class="btn btn-outline-secondary d-inline-flex align-items-center gap-2" type="button"
+        data-bs-toggle="offcanvas" data-bs-target="#appSidebarOffcanvas" aria-controls="appSidebarOffcanvas">
+        <i class="bi bi-list" aria-hidden="true"></i>
+        <span>Menu</span>
+      </button>
+
+      <div class="d-flex align-items-center gap-2">
+        <span class="badge" [class.text-bg-success]="subscriptionStatus() === 'Paid'"
+          [class.text-bg-secondary]="subscriptionStatus() !== 'Paid'">
+          {{ subscriptionStatus() }}
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Desktop sidebar -->
+  <aside class="sidebar d-none d-lg-flex flex-column border-end bg-body">
+    <div class="px-3 py-3 border-bottom d-flex align-items-center justify-content-between">
+      <div class="fw-semibold">MVP App</div>
+      <span class="badge" [class.text-bg-success]="subscriptionStatus() === 'Paid'"
+        [class.text-bg-secondary]="subscriptionStatus() !== 'Paid'">
+        {{ subscriptionStatus() }}
+      </span>
+    </div>
+
+    <nav class="p-2 flex-grow-1 overflow-auto">
+      @if (isCustomer()) {
+      <div class="nav-section text-body-secondary px-2 mt-2 mb-1">Customer</div>
+      <a class="nav-link sidebar-link" routerLink="/customer/my-requests" routerLinkActive="active">
+        <i class="bi bi-inbox me-2" aria-hidden="true"></i>
+        My Requests
+      </a>
+      <a class="nav-link sidebar-link" routerLink="/customer/new-request" routerLinkActive="active">
+        <i class="bi bi-plus-circle me-2" aria-hidden="true"></i>
+        New Request
+      </a>
+      <a class="nav-link sidebar-link" routerLink="/customer/subscription" routerLinkActive="active">
+        <i class="bi bi-credit-card me-2" aria-hidden="true"></i>
+        Subscription
+      </a>
+      }
+
+      @if (isProvider()) {
+      <div class="nav-section text-body-secondary px-2 mt-3 mb-1">Provider</div>
+      <a class="nav-link sidebar-link" routerLink="/provider/nearby" routerLinkActive="active">
+        <i class="bi bi-geo-alt me-2" aria-hidden="true"></i>
+        Nearby Requests
+      </a>
+      <a class="nav-link sidebar-link" routerLink="/provider/my-jobs" routerLinkActive="active">
+        <i class="bi bi-briefcase me-2" aria-hidden="true"></i>
+        My Jobs
+      </a>
+      }
+
+      @if (isAdmin()) {
+      <div class="nav-section text-body-secondary px-2 mt-3 mb-1">Admin</div>
+      <a class="nav-link sidebar-link" routerLink="/admin/users" routerLinkActive="active">
+        <i class="bi bi-people me-2" aria-hidden="true"></i>
+        User Management
+      </a>
+      <!-- <a class="nav-link sidebar-link" routerLink="/admin/roles" routerLinkActive="active">
+          <i class="bi bi-shield-lock me-2" aria-hidden="true"></i>
+          Role Management
+        </a> -->
+      <a class="nav-link sidebar-link" routerLink="/admin/requests" routerLinkActive="active">
+        <i class="bi bi-clipboard-check me-2" aria-hidden="true"></i>
+        Request Management
+      </a>
+      <a class="nav-link sidebar-link" routerLink="/admin/create-user" routerLinkActive="active">
+        <i class="bi bi-shield-lock me-2" aria-hidden="true"></i>
+        Create User
+      </a>
+      }
+    </nav>
+
+    <div class="p-3 border-top">
+      <button class="btn btn-outline-danger w-100" type="button" (click)="logout()">
+        <i class="bi bi-box-arrow-right me-2" aria-hidden="true"></i>
+        Logout
+      </button>
+    </div>
+  </aside>
+
+  <!-- Mobile offcanvas -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="appSidebarOffcanvas"
+    aria-labelledby="appSidebarOffcanvasLabel">
+    <div class="offcanvas-header border-bottom">
+      <div class="d-flex align-items-center gap-2">
+        <h5 class="offcanvas-title mb-0" id="appSidebarOffcanvasLabel">Menu</h5>
+        <span class="badge" [class.text-bg-success]="subscriptionStatus() === 'Paid'"
+          [class.text-bg-secondary]="subscriptionStatus() !== 'Paid'">
+          {{ subscriptionStatus() }}
+        </span>
+      </div>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+
+    <div class="offcanvas-body p-2">
+      <nav class="d-grid gap-1">
+        @if (isCustomer()) {
+        <div class="nav-section text-body-secondary px-2 mt-2 mb-1">Customer</div>
+        <a class="nav-link sidebar-link" routerLink="/customer/my-requests" routerLinkActive="active"
+          data-bs-dismiss="offcanvas">
+          <i class="bi bi-inbox me-2" aria-hidden="true"></i>
+          My Requests
+        </a>
+        <a class="nav-link sidebar-link" routerLink="/customer/new-request" routerLinkActive="active"
+          data-bs-dismiss="offcanvas">
+          <i class="bi bi-plus-circle me-2" aria-hidden="true"></i>
+          New Request
+        </a>
+        <a class="nav-link sidebar-link" routerLink="/customer/subscription" routerLinkActive="active"
+          data-bs-dismiss="offcanvas">
+          <i class="bi bi-credit-card me-2" aria-hidden="true"></i>
+          Subscription
+        </a>
+        }
+
+        @if (isProvider()) {
+        <div class="nav-section text-body-secondary px-2 mt-3 mb-1">Provider</div>
+        <a class="nav-link sidebar-link" routerLink="/provider/nearby" routerLinkActive="active"
+          data-bs-dismiss="offcanvas">
+          <i class="bi bi-geo-alt me-2" aria-hidden="true"></i>
+          Nearby Requests
+        </a>
+        <a class="nav-link sidebar-link" routerLink="/provider/my-jobs" routerLinkActive="active"
+          data-bs-dismiss="offcanvas">
+          <i class="bi bi-briefcase me-2" aria-hidden="true"></i>
+          My Jobs
+        </a>
+        }
+
+        @if (isAdmin()) {
+        <div class="nav-section text-body-secondary px-2 mt-3 mb-1">Admin</div>
+        <a class="nav-link sidebar-link" routerLink="/admin/users" routerLinkActive="active"
+          data-bs-dismiss="offcanvas">
+          <i class="bi bi-people me-2" aria-hidden="true"></i>
+          User Management
+        </a>
+        <a class="nav-link sidebar-link" routerLink="/admin/roles" routerLinkActive="active"
+          data-bs-dismiss="offcanvas">
+          <i class="bi bi-shield-lock me-2" aria-hidden="true"></i>
+          Role Management
+        </a>
+        <a class="nav-link sidebar-link" routerLink="/admin/requests" routerLinkActive="active"
+          data-bs-dismiss="offcanvas">
+          <i class="bi bi-clipboard-check me-2" aria-hidden="true"></i>
+          Request Management
+        </a>
+        }
+      </nav>
+
+      <div class="mt-3 pt-3 border-top">
+        <button class="btn btn-outline-danger w-100" type="button" (click)="logout()" data-bs-dismiss="offcanvas">
+          <i class="bi bi-box-arrow-right me-2" aria-hidden="true"></i>
+          Logout
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

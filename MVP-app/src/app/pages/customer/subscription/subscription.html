@@ -1,0 +1,51 @@
+<div class="container mt-5">
+
+    <div class="card shadow-sm border-0 text-center p-4">
+  
+      <h3 class="fw-bold mb-3">Subscription Plan</h3>
+  
+      <!-- Status -->
+      <div class="mb-3">
+        <span
+          class="badge fs-6"
+          [ngClass]="isFree() ? 'bg-secondary' : 'bg-success'"
+        >
+          {{ isFree() ? 'Free Plan' : 'Paid Plan' }}
+        </span>
+      </div>
+  
+      <!-- Description -->
+      <p class="text-muted">
+        Free plan allows only 3 requests. Upgrade to unlock unlimited requests.
+      </p>
+  
+      <!-- Error -->
+      @if (errorMessage()) {
+        <div class="alert alert-danger">
+          {{ errorMessage() }}
+        </div>
+      }
+  
+      <!-- Success -->
+      @if (successMessage()) {
+        <div class="alert alert-success">
+          {{ successMessage() }}
+        </div>
+      }
+  
+      <!-- Button -->
+      <button
+        class="btn btn-primary w-100"
+        (click)="subscribe()"
+        [disabled]="loading() || !isFree()"
+      >
+        @if (!loading()) {
+          <span>Subscribe Now</span>
+        } @else {
+          <span>Processing...</span>
+        }
+      </button>
+  
+    </div>
+  
+  </div>

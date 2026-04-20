@@ -1,0 +1,86 @@
+<div class="container my-4">
+
+    <h3 class="fw-bold mb-4">My Jobs</h3>
+  
+    @if (loading()) {
+      <div class="text-center">
+        <div class="spinner-border"></div>
+      </div>
+    }
+  
+    @if (error()) {
+      <div class="alert alert-danger">
+        {{ error() }}
+      </div>
+    }
+  
+    <div class="row g-3">
+  
+      @for (req of requests(); track req.id) {
+        <div class="col-md-6 col-lg-4">
+  
+          <div class="card shadow-sm border-0 h-100">
+  
+            <div class="card-body">
+  
+              <!-- Header -->
+              <div class="d-flex justify-content-between align-items-center mb-2">
+  
+                <h5 class="fw-bold mb-0">
+                  {{ req.title }}
+                </h5>
+  
+                <span
+                  class="badge"
+                  [ngClass]="{
+                    'bg-success': req.status === 'Completed',
+                    'bg-primary': req.status === 'Accepted',
+                    'bg-warning text-dark': req.status === 'Pending'
+                  }"
+                >
+                  {{ req.status }}
+                </span>
+  
+              </div>
+  
+              <!-- Description -->
+              <p class="text-muted small">
+                {{ req.description }}
+              </p>
+  
+              <!-- Distance -->
+              <div class="small mb-2">
+                📏 {{ req.distance | number:'1.1-1' }} km
+              </div>
+              <!-- <div class="small text-muted mb-2">
+                📍 {{ locationNames()[req.id] || 'Loading location...' }}
+              </div> -->
+  
+              <!-- Customer -->
+              <div class="small mb-3">
+                👤 {{ req.customer }}
+              </div>
+  
+              <!-- Button -->
+              <button
+                class="btn btn-success btn-sm w-100"
+                (click)="completeRequest(req.id)"
+                [disabled]="req.status === 'Completed'"
+              >
+                @if (req.status === 'Completed') {
+                  Completed
+                } @else {
+                  Mark as Completed
+                }
+              </button>
+  
+            </div>
+  
+          </div>
+  
+        </div>
+      }
+  
+    </div>
+  
+  </div>

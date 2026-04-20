@@ -1,0 +1,67 @@
+<div class="container mt-5">
+    <div class="card shadow-sm border-0 p-4">
+  
+      <h4 class="fw-bold mb-4">Create New User</h4>
+  
+      <!-- Name -->
+      <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          [value]="model().name"
+          (input)="update('name', $any($event.target).value)"
+        />
+      </div>
+  
+      <!-- Email -->
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          [value]="model().email"
+          (input)="update('email', $any($event.target).value)"
+        />
+      </div>
+  
+      <!-- Password -->
+      <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          [value]="model().password"
+          (input)="update('password', $any($event.target).value)"
+        />
+      </div>
+  
+      <!-- Error -->
+      @if (errorMessage()) {
+        <div class="alert alert-danger">
+          {{ errorMessage() }}
+        </div>
+      }
+  
+      <!-- Success -->
+      @if (successMessage()) {
+        <div class="alert alert-success">
+          {{ successMessage() }}
+        </div>
+      }
+  
+      <!-- Button -->
+      <button
+        class="btn btn-primary w-100"
+        (click)="submit()"
+        [disabled]="loading()"
+      >
+        @if (!loading()) {
+          <span>Create User</span>
+        } @else {
+          <span>Creating...</span>
+        }
+      </button>
+  
+    </div>
+  </div>

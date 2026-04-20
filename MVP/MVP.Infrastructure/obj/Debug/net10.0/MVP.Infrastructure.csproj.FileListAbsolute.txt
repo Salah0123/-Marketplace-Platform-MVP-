@@ -1,0 +1,35 @@
+C:\Users\LOQ\source\repos\MVP\MVP.Infrastructure\bin\Debug\net10.0\MVP.Infrastructure.deps.json
+C:\Users\LOQ\source\repos\MVP\MVP.Infrastructure\bin\Debug\net10.0\MVP.Infrastructure.runtimeconfig.json
+C:\Users\LOQ\source\repos\MVP\MVP.Infrastructure\bin\Debug\net10.0\MVP.Infrastructure.dll
+C:\Users\LOQ\source\repos\MVP\MVP.Infrastructure\bin\Debug\net10.0\MVP.Infrastructure.pdb
+C:\Users\LOQ\source\repos\MVP\MVP.Infrastructure\bin\Debug\net10.0\MVP.Domain.dll
+C:\Users\LOQ\source\repos\MVP\MVP.Infrastructure\bin\Debug\net10.0\MVP.Domain.pdb
+C:\Users\LOQ\source\repos\MVP\MVP.Infrastructure\obj\Debug\net10.0\MVP.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\LOQ\source\repos\MVP\MVP.Infrastructure\obj\Debug\net10.0\MVP.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LOQ\source\repos\MVP\MVP.Infrastructure\obj\Debug\net10.0\MVP.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\LOQ\source\repos\MVP\MVP.Infrastructure\obj\Debug\net10.0\MVP.Infrastructure.AssemblyInfo.cs
+C:\Users\LOQ\source\repos\MVP\MVP.Infrastructure\obj\Debug\net10.0\MVP.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\LOQ\source\repos\MVP\MVP.Infrastructure\obj\Debug\net10.0\MVP.Infr.881D5BD1.Up2Date
+C:\Users\LOQ\source\repos\MVP\MVP.Infrastructure\obj\Debug\net10.0\MVP.Infrastructure.dll
+C:\Users\LOQ\source\repos\MVP\MVP.Infrastructure\obj\Debug\net10.0\refint\MVP.Infrastructure.dll
+C:\Users\LOQ\source\repos\MVP\MVP.Infrastructure\obj\Debug\net10.0\MVP.Infrastructure.pdb
+C:\Users\LOQ\source\repos\MVP\MVP.Infrastructure\obj\Debug\net10.0\MVP.Infrastructure.genruntimeconfig.cache
+C:\Users\LOQ\source\repos\MVP\MVP.Infrastructure\obj\Debug\net10.0\ref\MVP.Infrastructure.dll
+C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Infrastructure\bin\Debug\net10.0\MVP.Infrastructure.deps.json
+C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Infrastructure\bin\Debug\net10.0\MVP.Infrastructure.runtimeconfig.json
+C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Infrastructure\bin\Debug\net10.0\MVP.Infrastructure.dll
+C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Infrastructure\bin\Debug\net10.0\MVP.Infrastructure.pdb
+C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Infrastructure\bin\Debug\net10.0\MVP.Domain.dll
+C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Infrastructure\bin\Debug\net10.0\MVP.Domain.pdb
+C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Infrastructure\obj\Debug\net10.0\MVP.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Infrastructure\obj\Debug\net10.0\MVP.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Infrastructure\obj\Debug\net10.0\MVP.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Infrastructure\obj\Debug\net10.0\MVP.Infrastructure.AssemblyInfo.cs
+C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Infrastructure\obj\Debug\net10.0\MVP.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Infrastructure\obj\Debug\net10.0\MVP.Infrastructure.sourcelink.json
+C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Infrastructure\obj\Debug\net10.0\MVP.Infr.881D5BD1.Up2Date
+C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Infrastructure\obj\Debug\net10.0\MVP.Infrastructure.dll
+C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Infrastructure\obj\Debug\net10.0\refint\MVP.Infrastructure.dll
+C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Infrastructure\obj\Debug\net10.0\MVP.Infrastructure.pdb
+C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Infrastructure\obj\Debug\net10.0\MVP.Infrastructure.genruntimeconfig.cache
+C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Infrastructure\obj\Debug\net10.0\ref\MVP.Infrastructure.dll

@@ -1,0 +1,35 @@
+C:\Users\LOQ\source\repos\MVP\MVP.Services\bin\Debug\net10.0\MVP.Services.deps.json
+C:\Users\LOQ\source\repos\MVP\MVP.Services\bin\Debug\net10.0\MVP.Services.dll
+C:\Users\LOQ\source\repos\MVP\MVP.Services\bin\Debug\net10.0\MVP.Services.pdb
+C:\Users\LOQ\source\repos\MVP\MVP.Services\bin\Debug\net10.0\MVP.Domain.dll
+C:\Users\LOQ\source\repos\MVP\MVP.Services\bin\Debug\net10.0\MVP.Infrastructure.dll
+C:\Users\LOQ\source\repos\MVP\MVP.Services\bin\Debug\net10.0\MVP.Infrastructure.pdb
+C:\Users\LOQ\source\repos\MVP\MVP.Services\bin\Debug\net10.0\MVP.Domain.pdb
+C:\Users\LOQ\source\repos\MVP\MVP.Services\obj\Debug\net10.0\MVP.Services.csproj.AssemblyReference.cache
+C:\Users\LOQ\source\repos\MVP\MVP.Services\obj\Debug\net10.0\MVP.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LOQ\source\repos\MVP\MVP.Services\obj\Debug\net10.0\MVP.Services.AssemblyInfoInputs.cache
+C:\Users\LOQ\source\repos\MVP\MVP.Services\obj\Debug\net10.0\MVP.Services.AssemblyInfo.cs
+C:\Users\LOQ\source\repos\MVP\MVP.Services\obj\Debug\net10.0\MVP.Services.csproj.CoreCompileInputs.cache
+C:\Users\LOQ\source\repos\MVP\MVP.Services\obj\Debug\net10.0\MVP.Serv.BD10CD78.Up2Date
+C:\Users\LOQ\source\repos\MVP\MVP.Services\obj\Debug\net10.0\MVP.Services.dll
+C:\Users\LOQ\source\repos\MVP\MVP.Services\obj\Debug\net10.0\refint\MVP.Services.dll
+C:\Users\LOQ\source\repos\MVP\MVP.Services\obj\Debug\net10.0\MVP.Services.pdb
+C:\Users\LOQ\source\repos\MVP\MVP.Services\obj\Debug\net10.0\ref\MVP.Services.dll
+C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Services\bin\Debug\net10.0\MVP.Services.deps.json
+C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Services\bin\Debug\net10.0\MVP.Services.dll
+C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Services\bin\Debug\net10.0\MVP.Services.pdb
+C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Services\bin\Debug\net10.0\MVP.Domain.dll
+C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Services\bin\Debug\net10.0\MVP.Infrastructure.dll
+C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Services\bin\Debug\net10.0\MVP.Infrastructure.pdb
+C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Services\bin\Debug\net10.0\MVP.Domain.pdb
+C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Services\obj\Debug\net10.0\MVP.Services.csproj.AssemblyReference.cache
+C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Services\obj\Debug\net10.0\MVP.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Services\obj\Debug\net10.0\MVP.Services.AssemblyInfoInputs.cache
+C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Services\obj\Debug\net10.0\MVP.Services.AssemblyInfo.cs
+C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Services\obj\Debug\net10.0\MVP.Services.csproj.CoreCompileInputs.cache
+C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Services\obj\Debug\net10.0\MVP.Services.sourcelink.json
+C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Services\obj\Debug\net10.0\MVP.Serv.BD10CD78.Up2Date
+C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Services\obj\Debug\net10.0\MVP.Services.dll
+C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Services\obj\Debug\net10.0\refint\MVP.Services.dll
+C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Services\obj\Debug\net10.0\MVP.Services.pdb
+C:\Users\LOQ\Desktop\New folder\-Marketplace-Platform-MVP-\MVP\MVP.Services\obj\Debug\net10.0\ref\MVP.Services.dll
