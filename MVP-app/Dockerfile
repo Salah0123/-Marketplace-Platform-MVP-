@@ -1,26 +1,18 @@
-# Stage 1: Build
-FROM node:22-alpine AS build
-
+# المرحلة الأولى: بناء المشروع (Build Stage)
+FROM node:20-alpine AS build
 WORKDIR /app
-
 COPY package*.json ./
-
-# ← بدل npm ci استخدم npm install
-RUN npm install --legacy-peer-deps
-
+RUN npm install
 COPY . .
 RUN npm run build
 
-# Stage 2: Runtime
-FROM node:22-alpine
+# المرحلة الثانية: تقديم الملفات (Serve Stage)
+FROM nginx:alpine
+# ملاحظة: تأكد من مسار المجلد في dist. غالباً يكون dist/اسم-مشروعك/browser
+COPY --from=build /app/dist/MVP-app/browser /usr/share/nginx/html
 
-WORKDIR /app
+# نسخ إعدادات Nginx المخصصة لتعمل الـ Routing بشكل صحيح
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-COPY --from=build /app/dist ./dist
-
-ENV PORT=4000
-ENV NODE_ENV=production
-
-EXPOSE 4000
-
-CMD ["node", "dist/MVP-app/server/server.mjs"]
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]

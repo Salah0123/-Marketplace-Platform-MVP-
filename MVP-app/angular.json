@@ -64,18 +64,6 @@
           },
           "defaultConfiguration": "production"
         },
-        "serve": {
-          "builder": "@angular/build:dev-server",
-          "configurations": {
-            "production": {
-              "buildTarget": "MVP-app:build:production"
-            },
-            "development": {
-              "buildTarget": "MVP-app:build:development"
-            }
-          },
-          "defaultConfiguration": "development"
-        },
         "test": {
           "builder": "@angular/build:unit-test"
         }
